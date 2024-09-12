@@ -3,15 +3,25 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Food
+  - Tail
+  - RedApple
+  - BlackApple
+  - EasterEgg
+  - Biscut
+  - SpeedBomb
+  - GreenSnake
+  - Cross
+  - YellowSnake
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Tail
   - Water
   - UI
-  - 
+  - Player
   - 
   - 
   - 
