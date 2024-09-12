@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class SingleSnakeController : MonoBehaviour
 {
@@ -79,10 +80,6 @@ public class SingleSnakeController : MonoBehaviour
 
     }
 
-    private void DisableTailCollisionTemporarly()
-    {
-        tail[1].GetComponent<Collider>().enabled = false;
-    }
 
     private void HandleInput()
     {
@@ -90,31 +87,42 @@ public class SingleSnakeController : MonoBehaviour
 
         if (isplayer1Active)
         {
-            if (Input.GetKey(KeyCode.LeftArrow) && moveDirection != Vector2.right)
-            { newDirection = Vector2.left; }
-
-            if (Input.GetKey(KeyCode.RightArrow) && moveDirection != Vector2.left)
-            { newDirection = Vector2.right; }
-
             if (Input.GetKey(KeyCode.UpArrow) && moveDirection != Vector2.down)
-            { newDirection = Vector2.up; }
+            {
+                newDirection = Vector2.up;
+            }
+            else if (Input.GetKey(KeyCode.DownArrow) && moveDirection != Vector2.up)
+            {
+                newDirection = Vector2.down;
+            }
+            else if (Input.GetKey(KeyCode.LeftArrow) && moveDirection != Vector2.right)
+            {
+                newDirection = Vector2.left;
+            }
+            else if (Input.GetKey(KeyCode.RightArrow) && moveDirection != Vector2.left)
+            {
+                newDirection = Vector2.right;
+            }
 
-            if (Input.GetKey(KeyCode.DownArrow) && moveDirection != Vector2.up)
-            { newDirection = Vector2.down; }
         }
         else
         {
-            if (Input.GetKey(KeyCode.A) && moveDirection != Vector2.right)
-                newDirection = Vector2.left;
-
-            if (Input.GetKey(KeyCode.D) && moveDirection != Vector2.left)
-                newDirection = Vector2.right;
-
             if (Input.GetKey(KeyCode.W) && moveDirection != Vector2.down)
+            {
                 newDirection = Vector2.up;
-
-            if (Input.GetKey(KeyCode.S) && moveDirection != Vector2.up)
+            }
+            else if (Input.GetKey(KeyCode.D) && moveDirection != Vector2.left)
+            {
+                newDirection = Vector2.right;
+            }
+           else if (Input.GetKey(KeyCode.A) && moveDirection != Vector2.right)
+            {
+                newDirection = Vector2.left;
+            }
+            else if (Input.GetKey(KeyCode.S) && moveDirection != Vector2.up)
+            {
                 newDirection = Vector2.down;
+            }
         }
 
         if (moveDirection != newDirection)
@@ -157,6 +165,7 @@ public class SingleSnakeController : MonoBehaviour
 
         if (other.tag == "RedApple")
         {
+            SoundManager.Instance.PlaySound(Sounds.POWERUP_SOUND);
             Grow();
             Scored();
         }
@@ -170,6 +179,9 @@ public class SingleSnakeController : MonoBehaviour
 
         if (other.tag == "BlackApple")
         {
+
+            SoundManager.Instance.PlaySound(Sounds.POWERUP_SOUND);
+
             if (!isShieldActive)
                 RemoveTail();
 
@@ -177,30 +189,35 @@ public class SingleSnakeController : MonoBehaviour
         }
         if (other.tag == "EasterEgg")
         {
+            SoundManager.Instance.PlaySound(Sounds.POWERUP_SOUND);
+
             ActivateShield();
         }
         if (other.tag == "SpeedBomb")
         {
+            SoundManager.Instance.PlaySound(Sounds.POWERUP_SOUND);
+
             ActivateBombSpeed();
         }
         if (other.tag == "Biscut")
         {
+            SoundManager.Instance.PlaySound(Sounds.POWERUP_SOUND);
 
             ActivateScoreBoost();
         }
-        
+
 
 
     }
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.tag == "YellowSnake" || other.gameObject .tag == "GreenSnake")
+        if (other.gameObject.tag == "YellowSnake" || other.gameObject.tag == "GreenSnake")
         {
             if (!isShieldActive)
             {
                 SetPlayerState(PlayerState.DEAD);
-                
+
             }
         }
 

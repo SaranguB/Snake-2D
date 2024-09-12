@@ -26,11 +26,14 @@ public class MainMenuController : MonoBehaviour
 
     private void PlayCOOPButton()
     {
+        SoundManager.Instance.PlaySound(Sounds.BUTTON_CLCK);
         SceneManager.LoadScene(2); 
     }
 
     private void PlaySinglePlayer()
     {
+
+        SoundManager.Instance.PlaySound(Sounds.BUTTON_CLCK);
         SceneManager.LoadScene(1);
     }
 }

@@ -9,7 +9,7 @@ public class SoundManager : MonoBehaviour
 {
     private static SoundManager instance;
 
-    public static SoundManager Instance;
+    public static SoundManager Instance { get { return instance; } }
 
     public AudioSource soundEffect;
     public AudioSource soundMusic;
@@ -29,10 +29,40 @@ public class SoundManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        PlayMusic(global::Sounds.MUSIC);
+    }
     public void PlaySound(Sounds sound)
     {
         AudioClip clip = GetSoundClip(sound);
+        if (clip != null)
+        {
+            soundEffect.PlayOneShot(clip);
+        }
+        else
+        {
+            Debug.LogWarning("Sound Couldn't be laoded");
+        }
+
     }
+
+    public void PlayMusic(Sounds sound)
+    {
+        AudioClip clip = GetSoundClip(sound);
+        if (clip != null)
+        {
+            soundMusic.clip = clip;
+            soundMusic.Play();
+        }
+        else
+        {
+            Debug.LogWarning("Sound Couldn't be laoded");
+        }
+
+
+    }
+
 
     private AudioClip GetSoundClip(Sounds sound)
     {
@@ -59,5 +89,5 @@ public enum Sounds
     GAME_FINISHED,
     POWERUP_SOUND,
     DEATH_SOUND,
-
+    BUTTON_CLCK
 }

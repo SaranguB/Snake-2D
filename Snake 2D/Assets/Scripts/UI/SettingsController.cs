@@ -54,6 +54,7 @@ public class SettingsController : MonoBehaviour
 
     private void ReloadScene()
     {
+        SoundManager.Instance.PlaySound(Sounds.BUTTON_CLCK);
         int currentScene = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentScene);
 
@@ -61,6 +62,9 @@ public class SettingsController : MonoBehaviour
 
     private void MainLobby()
     {
+
+        SoundManager.Instance.PlaySound(Sounds.BUTTON_CLCK);
+
         SceneManager.LoadScene(0);
     }
 }

@@ -23,11 +23,18 @@ public class GameOverController : MonoBehaviour
 
     private void MainLobby()
     {
+        SoundManager.Instance.PlayMusic(Sounds.MUSIC);
+        SoundManager.Instance.PlaySound(Sounds.BUTTON_CLCK);
         SceneManager.LoadScene(0);
     }
 
     private void ReloadScene()
     {
+
+        SoundManager.Instance.PlaySound(Sounds.BUTTON_CLCK);
+        SoundManager.Instance.PlayMusic(Sounds.MUSIC);
+
+
         int currentScene = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentScene);
 
