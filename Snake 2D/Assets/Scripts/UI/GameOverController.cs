@@ -1,9 +1,7 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using TMPro;
+
+
 using UnityEngine;
-using UnityEngine.Events;
+
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -33,7 +31,6 @@ public class GameOverController : MonoBehaviour
 
         SoundManager.Instance.PlaySound(Sounds.BUTTON_CLCK);
         SoundManager.Instance.PlayMusic(Sounds.MUSIC);
-
 
         int currentScene = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentScene);

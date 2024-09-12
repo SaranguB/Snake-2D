@@ -1,6 +1,4 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class UIController : MonoBehaviour
@@ -22,8 +20,6 @@ public class UIController : MonoBehaviour
 
             ISGameOverTriggered = true;
             SoundManager.Instance.PlayMusic(Sounds.GAME_FINISHED);
-
-            // Debug.Log("Both Are Dead");
             StartCoroutine(EnableGameOverForCOOP());
         }
 
@@ -35,7 +31,6 @@ public class UIController : MonoBehaviour
         yield return new WaitForSeconds(3f);
         gameOver.SetActive(true);
         coopManager.CheckWinner();
-
 
     }
 

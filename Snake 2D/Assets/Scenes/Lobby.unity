@@ -1002,14 +1002,14 @@ MonoBehaviour:
   soundEffect: {fileID: 298103937}
   soundMusic: {fileID: 708503231}
   sounds:
-  - soundType: 4
-    soundClip: {fileID: 8300000, guid: 397f887ca5a702240b4c9338fe65fb9c, type: 3}
   - soundType: 0
     soundClip: {fileID: 8300000, guid: 033766cc31c97904bae4404b8a079544, type: 3}
   - soundType: 1
     soundClip: {fileID: 8300000, guid: 5d3e18c6951ee5d47bb50f2d4a013bf5, type: 3}
   - soundType: 2
     soundClip: {fileID: 8300000, guid: ff66882032bef1948bb6950a1a20f40f, type: 3}
+  - soundType: 4
+    soundClip: {fileID: 8300000, guid: 397f887ca5a702240b4c9338fe65fb9c, type: 3}
 --- !u!81 &1230943191
 AudioListener:
   m_ObjectHideFlags: 0

@@ -23,12 +23,11 @@ public class FoodController : MonoBehaviour
 
     private void RemoveFood()
     {
-        //Debug.Log("Entered");
 
         removeTimer += Time.deltaTime;
         if (removeTimer > maxRemoveTime)
         {
-            // Debug.Log("Destroyed");
+           
             Destroy(this.gameObject);
             removeTimer = 0;
         }

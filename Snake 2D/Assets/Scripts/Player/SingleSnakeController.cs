@@ -1,9 +1,7 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Threading;
 using UnityEngine;
-using UnityEngine.EventSystems;
+
 
 public class SingleSnakeController : MonoBehaviour
 {
@@ -61,7 +59,7 @@ public class SingleSnakeController : MonoBehaviour
         if (transform.position.x > RightWall.transform.position.x - 1f)
         {
             transform.position = new Vector2(LeftWall.transform.position.x + 1f, transform.position.y);
-            //DisableTailCollisionTemporarly();
+            
         }
         if (transform.position.x < LeftWall.transform.position.x + 1f)
         {
@@ -246,7 +244,7 @@ public class SingleSnakeController : MonoBehaviour
         }
         if (isBoostScoreActive)
         {
-            //  Debug.Log("Score Boosted");
+            
             scoreController.IncreaseScore(n * 2);
         }
 
@@ -265,7 +263,6 @@ public class SingleSnakeController : MonoBehaviour
 
         if (tail.Count < 3)
         {
-            // Debug.Log(" Tail entered1");
 
             isFlag = false;
         }
