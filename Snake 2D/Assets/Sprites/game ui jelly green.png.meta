@@ -118,7 +118,7 @@ TextureImporter:
         width: 38
         height: 61
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -173,7 +173,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: game ui jelly green_1
+      name: Restart
       rect:
         serializedVersion: 2
         x: 2148
@@ -181,7 +181,7 @@ TextureImporter:
         width: 493
         height: 488
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -202,7 +202,7 @@ TextureImporter:
         width: 503
         height: 507
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -210,6 +210,174 @@ TextureImporter:
       bones: []
       spriteID: 48a7db47704a67e4ea44c96b45ccad16
       internalID: 1292538673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Menu Box
+      rect:
+        serializedVersion: 2
+        x: 1795
+        y: 529
+        width: 1090
+        height: 1298
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4dadbff48544d7439e5bbee270fc1ab
+      internalID: -1641602274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quit Button
+      rect:
+        serializedVersion: 2
+        x: 4258
+        y: 3239
+        width: 1081
+        height: 417
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f7f0ba26e65d9646948c74376b16201
+      internalID: -1137122511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blank
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 3761
+        width: 484
+        height: 436
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 706e5694e28a63140a988ea7c4b02913
+      internalID: -1994367791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BlackButton
+      rect:
+        serializedVersion: 2
+        x: 2906
+        y: 1142
+        width: 1440
+        height: 635
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6609d77138b015946a3ed87ea353a4bb
+      internalID: 1840176537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Settings
+      rect:
+        serializedVersion: 2
+        x: 3252
+        y: 3231
+        width: 483
+        height: 479
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44511294160b0044fb4986cea85f006c
+      internalID: -1353797412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pause
+      rect:
+        serializedVersion: 2
+        x: 1618
+        y: 3742
+        width: 516
+        height: 484
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea4d1b47a0e2f8a4bbf585d4601be098
+      internalID: 1967039533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Resume
+      rect:
+        serializedVersion: 2
+        x: 1149
+        y: 3747
+        width: 488
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40e04523357509a4395b151a0c20840a
+      internalID: 1093746632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quit Button Small
+      rect:
+        serializedVersion: 2
+        x: 4228
+        y: 3695
+        width: 512
+        height: 531
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f039687bf58cb534a84b801e01ffd51e
+      internalID: 251785918
       vertices: []
       indices: 
       edges: []
@@ -225,10 +393,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      BlackButton: 1840176537
+      Blank: -1994367791
+      Menu Box: -1641602274
       Menu Sprite: -1337048075
+      Pause: 1967039533
       PlaySprite: 1646898503
+      Quit Button: -1137122511
+      Quit Button Small: 251785918
+      Restart: -922006820
+      Resume: 1093746632
+      Settings: -1353797412
       game ui jelly green_0: -1371426485
-      game ui jelly green_1: -922006820
       game ui jelly green_2: 1292538673
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0

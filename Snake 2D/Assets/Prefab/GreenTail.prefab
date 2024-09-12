@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8320006436286244616}
   - component: {fileID: -4976025569713836855}
   m_Layer: 3
-  m_Name: Tail
+  m_Name: GreenTail
   m_TagString: Tail
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

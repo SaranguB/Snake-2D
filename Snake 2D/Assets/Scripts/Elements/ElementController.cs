@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class FoodController : MonoBehaviour
@@ -7,9 +5,15 @@ public class FoodController : MonoBehaviour
     private float maxRemoveTime = 5f;
     private float removeTimer = 0f;
 
+    public SingleSnakeController snakeController;
+
     private void Update()
     {
-        RemoveFood();
+        if (SettingsController.Instance.GetGameState() == GameState.PLAY_MODE)
+        {
+
+            RemoveFood();
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -24,7 +28,7 @@ public class FoodController : MonoBehaviour
         removeTimer += Time.deltaTime;
         if (removeTimer > maxRemoveTime)
         {
-           // Debug.Log("Destroyed");
+            // Debug.Log("Destroyed");
             Destroy(this.gameObject);
             removeTimer = 0;
         }

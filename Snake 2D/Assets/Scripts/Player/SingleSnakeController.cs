@@ -8,6 +8,7 @@ public class SingleSnakeController : MonoBehaviour
 {
     private Vector2 moveDirection = Vector2.right;
 
+    public bool isplayer1Active;
 
     private float moveDelay = .1f;
     private float moveTimer;
@@ -27,6 +28,7 @@ public class SingleSnakeController : MonoBehaviour
     int speed = 1;
 
     public ScoreController scoreController;
+
     private int score = 0;
     public PlayerState playerState;
 
@@ -35,12 +37,12 @@ public class SingleSnakeController : MonoBehaviour
     private void Start()
     {
         playerState = PlayerState.ALIVE;
-        transform.position = new Vector2(0.5f, 0.5f);
+        //transform.position = new Vector2(0.5f, 0.5f);
         tail.Add(transform);
     }
     private void Update()
     {
-        if (GetPlayerState() == PlayerState.ALIVE)
+        if (GetPlayerState() == PlayerState.ALIVE && SettingsController.Instance.GetGameState() == GameState.PLAY_MODE)
         {
             //Debug.Log("update");
             HandleInput();
@@ -49,7 +51,7 @@ public class SingleSnakeController : MonoBehaviour
 
         }
 
-        Debug.Log("PlayerState" + playerState);
+        //Debug.Log("PlayerState" + playerState);
     }
 
 
@@ -84,22 +86,41 @@ public class SingleSnakeController : MonoBehaviour
 
     private void HandleInput()
     {
+        Vector2 newDirection = moveDirection;
 
-        if ((Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
-            && moveDirection != Vector2.right)
-        { moveDirection = Vector2.left; }
+        if (isplayer1Active)
+        {
+            if (Input.GetKey(KeyCode.LeftArrow) && moveDirection != Vector2.right)
+            { newDirection = Vector2.left; }
 
-        if ((Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.S))
-            && moveDirection != Vector2.left)
-        { moveDirection = Vector2.right; }
+            if (Input.GetKey(KeyCode.RightArrow) && moveDirection != Vector2.left)
+            { newDirection = Vector2.right; }
 
-        if ((Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
-            && moveDirection != Vector2.down)
-        { moveDirection = Vector2.up; }
+            if (Input.GetKey(KeyCode.UpArrow) && moveDirection != Vector2.down)
+            { newDirection = Vector2.up; }
 
-        if ((Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
-            && moveDirection != Vector2.up)
-        { moveDirection = Vector2.down; }
+            if (Input.GetKey(KeyCode.DownArrow) && moveDirection != Vector2.up)
+            { newDirection = Vector2.down; }
+        }
+        else
+        {
+            if (Input.GetKey(KeyCode.A) && moveDirection != Vector2.right)
+                newDirection = Vector2.left;
+
+            if (Input.GetKey(KeyCode.D) && moveDirection != Vector2.left)
+                newDirection = Vector2.right;
+
+            if (Input.GetKey(KeyCode.W) && moveDirection != Vector2.down)
+                newDirection = Vector2.up;
+
+            if (Input.GetKey(KeyCode.S) && moveDirection != Vector2.up)
+                newDirection = Vector2.down;
+        }
+
+        if (moveDirection != newDirection)
+            moveDirection = newDirection;
+
+
 
     }
 
@@ -123,6 +144,16 @@ public class SingleSnakeController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+
+        if (other.gameObject.tag == "Cross")
+        {
+            if (!isShieldActive)
+            {
+                scoreController.ResetScore();
+                SetPlayerState(PlayerState.DEAD);
+            }
+        }
+
 
         if (other.tag == "RedApple")
         {
@@ -156,11 +187,25 @@ public class SingleSnakeController : MonoBehaviour
         {
 
             ActivateScoreBoost();
+        }
+        
 
 
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.tag == "YellowSnake" || other.gameObject .tag == "GreenSnake")
+        {
+            if (!isShieldActive)
+            {
+                SetPlayerState(PlayerState.DEAD);
+                
+            }
         }
 
     }
+
 
     private void ActivateScoreBoost()
     {
@@ -213,7 +258,7 @@ public class SingleSnakeController : MonoBehaviour
 
             if (!isShieldActive)
             {
-                Debug.Log("fasle");
+
                 SetPlayerState(PlayerState.DEAD);
             }
         }

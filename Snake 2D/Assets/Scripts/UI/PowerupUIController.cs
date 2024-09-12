@@ -66,7 +66,7 @@ public class PowerupUIController : MonoBehaviour
 
     private void ChangeDeactivatedColor(Image image)
     {
-        Debug.Log("Worked");
+       
         Color newColor = image.color;
         newColor.a = .5f;
         image.color = newColor;

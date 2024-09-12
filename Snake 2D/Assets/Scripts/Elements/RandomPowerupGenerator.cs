@@ -8,9 +8,10 @@ public class RandomPowerupGenerator : MonoBehaviour
 {
     public BoxCollider2D powerupBoundaryCollider;
     public List<GameObject> food;
-    public GameObject selectedFood;
+    private GameObject selectedFood;
 
-    public List<int> powerupWeights;
+    public SingleSnakeController GreenSnakecontroller;
+    public SingleSnakeController YellowSnakecontroller;
 
     private float Maxtime = 3.0f;
     private float Timer = 0f;
@@ -18,21 +19,24 @@ public class RandomPowerupGenerator : MonoBehaviour
 
     private void Start()
     {
-        powerupWeights = new List<int>() { 3, 6, 12 };
+
         GenerateRandomPowerup();
     }
 
     private void Update()
     {
-        Timer += Time.deltaTime;
-        Maxtime = UnityEngine.Random.Range(1, 5f);
-        if (Timer > Maxtime)
+        if (SettingsController.Instance.GetGameState() == GameState.PLAY_MODE &&
+            GreenSnakecontroller.GetPlayerState() == PlayerState.ALIVE)
         {
-            GenerateRandomPowerup();
-            Timer = 0;
+            Timer += Time.deltaTime;
+            Maxtime = UnityEngine.Random.Range(1, 5f);
+            if (Timer > Maxtime)
+            {
+                GenerateRandomPowerup();
+                Timer = 0;
 
+            }
         }
-
 
     }
 
@@ -50,36 +54,36 @@ public class RandomPowerupGenerator : MonoBehaviour
 
     }
 
-   /* private int GenerateRandomWeightedIndex()
-    {
-        int totalWeight = 0;
+    /* private int GenerateRandomWeightedIndex()
+     {
+         int totalWeight = 0;
 
-        foreach (int weight in powerupWeights)
-        {
-            totalWeight += weight;
-        }
+         foreach (int weight in powerupWeights)
+         {
+             totalWeight += weight;
+         }
 
-        if (totalWeight < 0)
-        {
-            return 0;
-        }
+         if (totalWeight < 0)
+         {
+             return 0;
+         }
 
-        int randomWeight = UnityEngine.Random.Range(0, totalWeight);
-        //Debug.Log("weight " + randomWeight);
+         int randomWeight = UnityEngine.Random.Range(0, totalWeight);
+         //Debug.Log("weight " + randomWeight);
 
-        int currentWeightSum = 0;
+         int currentWeightSum = 0;
 
-        for (int i = 0; i < powerupWeights.Count; i++)
-        {
-            currentWeightSum += powerupWeights[i];
-            if (currentWeightSum > randomWeight)
-            {
-                return i;
-            }
+         for (int i = 0; i < powerupWeights.Count; i++)
+         {
+             currentWeightSum += powerupWeights[i];
+             if (currentWeightSum > randomWeight)
+             {
+                 return i;
+             }
 
-        }
-        return 0;
+         }
+         return 0;
 
 
-    }*/
+     }*/
 }

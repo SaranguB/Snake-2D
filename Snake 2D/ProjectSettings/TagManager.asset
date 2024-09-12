@@ -11,6 +11,9 @@ TagManager:
   - EasterEgg
   - Biscut
   - SpeedBomb
+  - GreenSnake
+  - Cross
+  - YellowSnake
   layers:
   - Default
   - TransparentFX
@@ -18,7 +21,7 @@ TagManager:
   - Tail
   - Water
   - UI
-  - 
+  - Player
   - 
   - 
   - 
