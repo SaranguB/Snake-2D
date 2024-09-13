@@ -3,11 +3,11 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MainMenuController : MonoBehaviour
-{  
+{
 
-    public Button SinglePlayerButton;
-    public Button coopButton;
-    public Button quitButton;
+    [SerializeField] private Button SinglePlayerButton;
+    [SerializeField] private Button coopButton;
+    [SerializeField] private Button quitButton;
 
     private void Awake()
     {

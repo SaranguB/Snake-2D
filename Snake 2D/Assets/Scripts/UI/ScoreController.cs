@@ -5,11 +5,11 @@ using UnityEngine;
 
 public class ScoreController : MonoBehaviour
 {
-    public TextMeshProUGUI scoreText;
+    [SerializeField] private TextMeshProUGUI scoreText;
     private int score = 0;
 
     private int highScore = 0;
-    public TextMeshProUGUI highScoreText;
+    [SerializeField] private TextMeshProUGUI highScoreText;
 
     private void Start()
     {

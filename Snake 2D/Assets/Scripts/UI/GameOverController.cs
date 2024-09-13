@@ -7,10 +7,10 @@ using UnityEngine.UI;
 
 public class GameOverController : MonoBehaviour
 {
-    
 
-    public Button replayButton;
-    public Button MenuButton;
+
+    [SerializeField] private Button replayButton;
+    [SerializeField] private Button MenuButton;
 
     
     private void Awake()

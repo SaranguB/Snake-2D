@@ -5,7 +5,7 @@ public class FoodController : MonoBehaviour
     private float maxRemoveTime = 5f;
     private float removeTimer = 0f;
 
-    public SingleSnakeController snakeController;
+    [SerializeField] private SingleSnakeController snakeController;
 
     private void Update()
     {

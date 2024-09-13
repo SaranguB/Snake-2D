@@ -7,10 +7,14 @@ public class SoundManager : MonoBehaviour
 
     public static SoundManager Instance { get { return instance; } }
 
-    public AudioSource soundEffect;
-    public AudioSource soundMusic;
+    [SerializeField]
+    private AudioSource soundEffect;
 
-    public SoundType[] sounds;
+    [SerializeField]
+    private AudioSource soundMusic;
+
+    [SerializeField]
+    private SoundType[] sounds;
 
     private void Awake()
     {

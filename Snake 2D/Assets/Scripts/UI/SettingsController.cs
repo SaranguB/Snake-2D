@@ -4,12 +4,12 @@ using UnityEngine.UI;
 
 public class SettingsController : MonoBehaviour
 {
-    public GameObject settings;
+    [SerializeField] private GameObject settings;
 
     private static SettingsController instance;
-    public GameState gameState = GameState.PLAY_MODE;
-    public Button replayButton;
-    public Button MenuButton;
+    [SerializeField] private GameState gameState = GameState.PLAY_MODE;
+    [SerializeField] private Button replayButton;
+    [SerializeField] private Button MenuButton;
     public static SettingsController Instance { get { return instance; } }
 
     private void Awake()

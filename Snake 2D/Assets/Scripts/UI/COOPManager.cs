@@ -3,10 +3,10 @@ using UnityEngine;
 
 public class COOPManager : MonoBehaviour
 {
-    public SingleSnakeController greenSnake;
-    public SingleSnakeController yellowSnake;
+    [SerializeField] private SingleSnakeController greenSnake;
+    [SerializeField] private SingleSnakeController yellowSnake;
 
-    public TextMeshProUGUI wonTitle;
+    [SerializeField] private TextMeshProUGUI wonTitle;
 
     public void CheckWinner()
     {

@@ -3,10 +3,9 @@ using UnityEngine;
 
 public class SingleUIController : MonoBehaviour
 {
-
-    public GameObject gameOver;
-    public SingleSnakeController GreenSnake;
-    public ScoreController scoreController;
+    [SerializeField] private GameObject gameOver;
+    [SerializeField] private SingleSnakeController GreenSnake;
+    [SerializeField] private ScoreController scoreController;
     private bool ISGameOverTriggered = false;
     private void Update()
     {

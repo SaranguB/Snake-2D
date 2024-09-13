@@ -3,12 +3,12 @@ using UnityEngine;
 
 public class RandomPowerupGenerator : MonoBehaviour
 {
-    public BoxCollider2D powerupBoundaryCollider;
-    public List<GameObject> food;
+    [SerializeField] private BoxCollider2D powerupBoundaryCollider;
+    [SerializeField] private List<GameObject> food;
     private GameObject selectedFood;
 
-    public SingleSnakeController GreenSnakecontroller;
-    public SingleSnakeController YellowSnakecontroller;
+    [SerializeField] private SingleSnakeController GreenSnakecontroller;
+    [SerializeField] private SingleSnakeController YellowSnakecontroller;
 
     private float Maxtime = 3.0f;
     private float Timer = 0f;

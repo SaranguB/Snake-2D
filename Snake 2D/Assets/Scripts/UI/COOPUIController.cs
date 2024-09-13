@@ -3,13 +3,13 @@ using UnityEngine;
 
 public class UIController : MonoBehaviour
 {
-    public GameObject gameOver;
-    public SingleSnakeController GreenSnake;
-    public SingleSnakeController YellowSnake;
+    [SerializeField] private GameObject gameOver;
+    [SerializeField] private SingleSnakeController GreenSnake;
+    [SerializeField] private SingleSnakeController YellowSnake;
     private bool ISGameOverTriggered = false;
 
 
-    public COOPManager coopManager;
+    [SerializeField] private COOPManager coopManager;
 
 
     private void Update()

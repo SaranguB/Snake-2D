@@ -7,32 +7,32 @@ public class SingleSnakeController : MonoBehaviour
 {
     private Vector2 moveDirection = Vector2.right;
 
-    public bool isplayer1Active;
+    [SerializeField] private bool isplayer1Active;
 
     private float moveDelay = .1f;
     private float moveTimer;
 
-    public bool isShieldActive = false;
-    public bool isBombSpeedActive = false;
-    public bool isBoostScoreActive = false;
+    private bool isShieldActive = false;
+    private bool isBombSpeedActive = false;
+    private bool isBoostScoreActive = false;
 
-    public PowerupUIController powerupUIController;
-    public GameObject tailPrefab;
+    [SerializeField] private PowerupUIController powerupUIController;
+    [SerializeField] private GameObject tailPrefab;
     private List<Transform> tail = new List<Transform>();
 
-    public GameObject LeftWall;
-    public GameObject RightWall;
-    public GameObject TopWall;
-    public GameObject BottomWall;
-    int speed = 1;
+    [SerializeField] private GameObject LeftWall;
+    [SerializeField] private GameObject RightWall;
+    [SerializeField] private GameObject TopWall;
+    [SerializeField] private GameObject BottomWall;
+    private int speed = 1;
 
     public ScoreController scoreController;
 
     private int score = 0;
-    public PlayerState playerState;
+    [SerializeField] private PlayerState playerState;
 
-    float powerupTimer = 0;
-    public bool isFlag = false;
+    private float powerupTimer = 0;
+    private bool isFlag = false;
     private void Start()
     {
         playerState = PlayerState.ALIVE;

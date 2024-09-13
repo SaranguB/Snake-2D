@@ -3,13 +3,13 @@ using UnityEngine.UI;
 
 public class PowerupUIController : MonoBehaviour
 {
-    public GameObject EasterEggShield;
+    [SerializeField] private GameObject EasterEggShield;
     private Image EasterEggShieldImage;
-  
-    public GameObject ScoreBoost;
+
+    [SerializeField] private GameObject ScoreBoost;
     private Image ScoreBoostImage;
 
-    public GameObject Bomb;
+    [SerializeField] private GameObject Bomb;
     private Image BombImage;
 
 
